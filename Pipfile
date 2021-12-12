@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+fastapi-utils = "*"
+psycopg2 = "*"
+requests = "*"
+djangorestframework = "*"
+drf-yasg = "*"
+djoser = "*"
+pytz = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
