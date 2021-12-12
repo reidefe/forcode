@@ -25,8 +25,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     re_path('', include('forcode.urls')),
     re_path("admin/", admin.site.urls),
-    re_path(r"^auth/", include("djoser.urls")),
-    re_path(r'^auth/', include('djoser.urls.authtoken')),
+    # re_path(r"^auth/", include("djoser.urls")),
+    # re_path(r'^auth/', include('djoser.urls.authtoken')),
     re_path(
         r"^swagger(?P<format>\.json|\.yaml)$",
         schema_view.without_ui(cache_timeout=0),

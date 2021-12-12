@@ -8,7 +8,7 @@ router.register(
     r"products",
     ProductViewSet,
 )
-router.register(r"sales", SaleViewSet)
+#router.register(r"sales", SaleViewSet)
 router.register(
     r"category",
     CategoryViewSet,

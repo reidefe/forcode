@@ -112,7 +112,7 @@ class CategoryViewSet(ModelViewSet):
                 )
                 .aggregate(Avg("avg_count_discount"))
             )
-            serializer = self.get_serializer(q, many=True)
+            serializer = CategorySerializer(q, many=True)
             return Response({"day purchases": serializer.data})
         else:
             obj = (
@@ -155,7 +155,7 @@ class SaleViewSet(ModelViewSet):
     )
     def get_purchases(self, **kwargs):
         purchase = SaleModel.objects.all().order_by("created").values_list()
-        serializer = self.get_serializer(purchase, many=True)
+        serializer = SaleSerializer(purchase, many=True)
         return Response({"all purchases": serializer.data})
 
     # return all purchases for a specific day and date in year-month-day format
