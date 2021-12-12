@@ -10,7 +10,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Foxy API",
+        title="FORCODE API",
         default_version="v1",
         description="Forcode test task Endpoints",
         terms_of_service="",
