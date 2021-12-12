@@ -7,6 +7,7 @@ from drf_yasg import openapi
 
 
 
+
 schema_view = get_schema_view(
     openapi.Info(
         title="Foxy API",
@@ -40,3 +41,5 @@ urlpatterns = [
         r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
 ]
+
+

@@ -18,10 +18,8 @@ router.register(
     BuyerViewSet,
 )
 
-# urlpatterns = [
-#     path("api/genres/", GenreViews.as_view(), name="genres"),
-#     # path("api/genres/<int:pk>", GenreViews().get_specific, name="genres"),
-#     path("api/actors", ActorViews.as_view(), name="actors"),
-#     path("api/directors/", DirectorViews.as_view(), name="directors"),
-# ]
+router.register(
+    r"sale",
+    SaleViewSet,
+)
 urlpatterns = router.urls
