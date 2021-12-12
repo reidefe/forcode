@@ -164,7 +164,6 @@ class SaleViewSet(ModelViewSet):
         if date:
             q = SaleModel.objects.filter(created=date).values()
             serializer = self.get_serializer(q, many=True)
-
             return Response({"day purchases": serializer.data})
         else:
             obj = SaleModel.objects.filter(created=datetime.date).values_list(
