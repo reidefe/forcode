@@ -80,7 +80,7 @@ def get_specific_purchase(request, date: datetime):
         )
 
 @api_view()
-def avg_category_discounted_sale(self,  date: datetime):
+def avg_category_discounted_sale( date: datetime):
     if date:
         q = (
             CategoryModel.objects.filter(created=date)
@@ -115,7 +115,7 @@ def avg_category_discounted_sale(self,  date: datetime):
             )
             .aggregate(Avg("avg_count_discount", "avg_count_no_discount"))
         )
-        serializer = self.get_serializer(obj, many=True)
+        serializer = CategoryModel(obj, many=True)
         return Response(
             {
                 "error message": "no purchase on specified date",
@@ -124,8 +124,8 @@ def avg_category_discounted_sale(self,  date: datetime):
         )
 
 # returns the avg amount of products sold for product discount
-@api_view
-def avg_product_discounted_sale( date: datetime.date):
+@api_view()
+def avg_product_discounted_sale( date: datetime):
     if date:
         q = (
             ProductModel.objects.filter(created=date)

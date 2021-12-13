@@ -25,10 +25,10 @@ router.register(
 
 
 urlpatterns = [
-    re_path('sale/avg-cat-discount-sale/<date:date>', avg_category_discounted_sale),
-    re_path('sale/product-avg-discount-sale/<date:date>', avg_product_discounted_sale),
-    re_path('sale/get-purchases/', get_purchases),
-    re_path('sale/sepcific-purchase/<date:date>', get_specific_purchase),
+    re_path('category/avg-discount-sale/<date:date>', avg_category_discounted_sale),
+    re_path('products/avg-discount-sale/<date:date>', avg_product_discounted_sale),
+    re_path('sale/get-purchases', get_purchases),
+    re_path('sale/specific-purchase/<date:date>', get_specific_purchase),
 
 ]
 urlpatterns += router.urls
